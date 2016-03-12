@@ -1,2 +1,2 @@
-#Innovita
+#Innovista
 Digital Hackathon
