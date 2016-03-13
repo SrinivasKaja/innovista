@@ -19,6 +19,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -352,7 +353,7 @@
                     <div class="col-md-9 col-sm-8">
                       <div class="pad">
                         <!-- Map will be created here -->
-                        <div id="world-map-markers" class=" " style="height: 325px;"></div>						
+                        <div id="world-map-markers" style="height: 325px;"></div>
                       </div>
                     </div><!-- /.col -->
                     <div class="col-md-3 col-sm-4">
@@ -360,17 +361,17 @@
                         <div class="description-block margin-bottom">
                           <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
                           <h5 class="description-header">8390</h5>
-                          <span class="description-text">VoIP</span>
+                          <span class="description-text">Visits</span>
                         </div><!-- /.description-block -->
                         <div class="description-block margin-bottom">
                           <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                          <h5 class="description-header">2259</h5>
-                          <span class="description-text">WireLess</span>
+                          <h5 class="description-header">30%</h5>
+                          <span class="description-text">Referrals</span>
                         </div><!-- /.description-block -->
                         <div class="description-block">
                           <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                          <h5 class="description-header">1710</h5>
-                          <span class="description-text">LAN</span>
+                          <h5 class="description-header">70%</h5>
+                          <span class="description-text">Organic</span>
                         </div><!-- /.description-block -->
                       </div>
                     </div><!-- /.col -->
@@ -423,7 +424,7 @@
             <div class="col-md-4">
               <div class="box box-default">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Location of Services</h3>
+                  <h3 class="box-title">Health of Services</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -437,20 +438,21 @@
 					
                     <div class="col-md-3 col-sm-6 col-xs-6 text-center">
                       <input type="text" class="knob" value="30" data-width="90" data-height="90" data-fgColor="#3c8dbc">
-                      <div class="knob-label">San Marino</div>
+                      <div class="knob-label">New Visitors</div>
                     </div><!-- ./col -->
 					<div class="col-md-3 col-sm-6 col-xs-6 text-center">
                       <input type="text" class="knob" value="50" data-width="90" data-height="90" data-fgColor="#3c8dbc">
-                      <div class="knob-label">Maldives</div>                   </div><!-- ./col -->
+                      <div class="knob-label">Test</div>
+                    </div><!-- ./col -->
 					
 					
 					<div class="col-md-3 col-sm-6 col-xs-6 text-center">
                       <input type="text" class="knob" value="80" data-width="90" data-height="90" data-fgColor="#3c8dbc">
-                      <div class="knob-label">Saint Lucia</div>
+                      <div class="knob-label">Test</div>
                     </div><!-- ./col -->
 					<div class="col-md-3 col-sm-6 col-xs-6 text-center">
                       <input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#3c8dbc">
-                      <div class="knob-label">Bahrain</div>
+                      <div class="knob-label">Test</div>
                     </div><!-- ./col -->
 					
                    
@@ -459,7 +461,7 @@
                   
                   </div><!-- /.row -->
                 </div><!-- /.box-body -->
-                <div class="box-body" style="visibility: hidden; display:none" >
+                <div class="box-body">
                   <div class="row">
                     <div class="col-md-8">
                       <div class="chart-responsive">
@@ -797,6 +799,17 @@
           }
         });
         /* END JQUERY KNOB */
+
+        //INITIALIZE SPARKLINE CHARTS
+        $(".sparkline").each(function () {
+          var $this = $(this);
+          $this.sparkline('html', $this.data());
+        });
+
+        /* SPARKLINE DOCUMENTAION EXAMPLES http://omnipotent.net/jquery.sparkline/#s-about */
+        drawDocSparklines();
+        drawMouseSpeedDemo();
+
       });
       function drawDocSparklines() {
 
